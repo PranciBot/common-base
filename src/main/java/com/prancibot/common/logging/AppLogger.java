@@ -1,4 +1,4 @@
-package com.dthvinh.common.logging;
+package com.prancibot.common.logging;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
