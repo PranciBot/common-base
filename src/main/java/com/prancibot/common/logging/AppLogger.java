@@ -18,6 +18,10 @@ public class AppLogger {
         return new AppLogger(clazz);
     }
 
+    public static boolean isDebugEnabled() {
+        return Boolean.parseBoolean(System.getenv("DEBUG_ENABLE"));
+    }
+
     public void info(String message, Object... args) {
         logger.info(message, args);
     }
