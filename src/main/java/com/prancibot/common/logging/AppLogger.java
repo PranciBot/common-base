@@ -1,5 +1,6 @@
 package com.prancibot.common.logging;
 
+import com.prancibot.common.enums.LogLevel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
@@ -36,6 +37,15 @@ public class AppLogger {
 
     public void error(String message, Object... args) {
         logger.error(message, args);
+    }
+
+    public void log(LogLevel level, String message, Object... args) {
+        switch (level) {
+            case INFO -> info(message, args);
+            case DEBUG -> debug(message, args);
+            case WARN -> warn(message, args);
+            case ERROR -> error(message, args);
+        }
     }
 
     public void error(String message, Throwable ex, Object... args) {
